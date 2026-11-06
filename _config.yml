@@ -1,0 +1,27 @@
+title: BOUR Abdelhadi
+description: Security Engineer with a background in development.
+url: "https://bour.ch"
+baseurl: ""
+timezone: UTC
+author: BOUR Abdelhadi
+twitter:
+  username: BourAbdelhadi
+
+# Keep the same URLs as the old site, e.g. /hidden-cost-tiny-dependencies/
+permalink: /:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .claude

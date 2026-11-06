@@ -1,0 +1,51 @@
+/* Mostly browser defaults. Only width, spacing and dark mode. */
+
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --link: #0000ee;
+  --visited: #551a8b;
+  --rule: #999999;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #111111;
+  --text: #e0e0e0;
+  --link: #8ab4f8;
+  --visited: #c58af9;
+  --rule: #555555;
+  color-scheme: dark;
+}
+
+html { background: var(--bg); }
+
+body {
+  max-width: 42em;
+  margin: 0 auto;
+  padding: 1em 1em 3em;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+h1, h2, h3 { line-height: 1.2; }
+
+a { color: var(--link); }
+a:visited { color: var(--visited); }
+
+hr { border: 0; border-top: 1px solid var(--rule); }
+
+#theme-toggle { float: right; margin-top: .6em; }
+.to-light { display: none; }
+:root[data-theme="dark"] .to-light { display: inline; }
+:root[data-theme="dark"] .to-dark { display: none; }
+
+img { max-width: 100%; height: auto; }
+
+pre { overflow-x: auto; padding: .5em; border: 1px solid var(--rule); }
+
+blockquote { margin-left: 1.5em; padding-left: 1em; border-left: 2px solid var(--rule); }
+
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .3s; }

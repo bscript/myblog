@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var t = "light";
+      try { t = localStorage.getItem("theme") || "light"; } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  {% seo title=false %}
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  {% feed_meta %}
+</head>
+<body>
+  <button id="theme-toggle" type="button"><span class="to-dark">Dark mode</span><span class="to-light">Light mode</span></button>
+  {% if page.layout == "post" %}<p><a href="{{ '/' | relative_url }}">&larr; Home</a></p>{% endif %}
+  {{ content }}
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      var root = document.documentElement;
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      function apply() {
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      }
+      if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.startViewTransition(apply);
+      } else {
+        apply();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Jekyll build output (GitHub builds the site itself)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Installed gems and local bundler settings
+vendor/
+.bundle/
+
+# Secrets, just in case
+.env
+.env.*
+
+# Editor / OS / tool files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+.claude/
