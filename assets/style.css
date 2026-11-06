@@ -26,6 +26,7 @@ body {
   padding: 1em 1em 3em;
   background: var(--bg);
   color: var(--text);
+  font-family: sans-serif;
   line-height: 1.5;
 }
 
@@ -40,6 +41,9 @@ hr { border: 0; border-top: 1px solid var(--rule); }
 .to-light { display: none; }
 :root[data-theme="dark"] .to-light { display: inline; }
 :root[data-theme="dark"] .to-dark { display: none; }
+
+code, pre { font-family: monospace, monospace; font-size: .9em; }
+pre code { font-size: 1em; }
 
 img { max-width: 100%; height: auto; }
 
